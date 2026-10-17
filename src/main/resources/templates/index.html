@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Calculadora DevOps</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/estilo.css}">
+</head>
+
+<body>
+    <main class="cartao">
+
+        <div class="etapa">ETAPA 2 - CALCULADORA</div>
+
+        <h1>Calculadora DevOps</h1>
+
+        <p class="subtitulo">
+            Java + Spring Boot + Thymeleaf
+        </p>
+
+        <form th:action="@{/calcular}" method="post">
+
+            <label for="numero1">Primeiro número</label>
+            <input type="number"
+                   id="numero1"
+                   name="numero1"
+                   step="any"
+                   required
+                   th:value="${numero1}">
+
+            <label for="numero2">Segundo número</label>
+            <input type="number"
+                   id="numero2"
+                   name="numero2"
+                   step="any"
+                   required
+                   th:value="${numero2}">
+
+            <label for="operacao">Operação</label>
+
+            <select id="operacao" name="operacao">
+
+                <option value="somar"
+                        th:selected="${operacao == 'somar'}">
+                    Somar (+)
+                </option>
+
+                <option value="subtrair"
+                        th:selected="${operacao == 'subtrair'}">
+                    Subtrair (-)
+                </option>
+
+                <option value="multiplicar"
+                        th:selected="${operacao == 'multiplicar'}">
+                    Multiplicar (×)
+                </option>
+
+                <option value="dividir"
+                        th:selected="${operacao == 'dividir'}">
+                    Dividir (÷)
+                </option>
+
+            </select>
+
+            <button type="submit" id="botao-calcular">
+                Calcular
+            </button>
+
+        </form>
+
+        <div class="resultado"
+             th:if="${resultado != null}">
+
+            Resultado:
+            <strong id="resultado"
+                    th:text="${resultado}">
+            </strong>
+
+        </div>
+
+        <p class="erro"
+           id="mensagem-erro"
+           th:if="${erro != null}"
+           th:text="${erro}">
+        </p>
+
+    </main>
+</body>
+</html>
