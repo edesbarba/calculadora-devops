@@ -14,7 +14,7 @@ public class CalculadoraService {
     }
 
     public double multiplicar(double a, double b) {
-        return a * b * b;
+        return a * b;
     }
 
     public double dividir(double a, double b) {
