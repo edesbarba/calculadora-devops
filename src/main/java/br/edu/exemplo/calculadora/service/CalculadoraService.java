@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class CalculadoraService {
 
     public double somar(double a, double b) {
-        return a + b;
+        return a + b + b;
     }
 
     public double subtrair(double a, double b) {
