@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculadoraService {
 
-	// lógica do programa 
+	// lógica do programa completa
+	// final
     public double somar(double a, double b) {
         return a + b;
     }
